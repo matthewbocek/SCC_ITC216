@@ -1,0 +1,7 @@
+1;What is your favorite color?;Red;Blue;Green;Yellow
+2;Why?;It's bright;It's pretty;It's calming;It's such a sad color
+3;What is your favorite animal?;Dog;Cat;Horse;Snake
+4;Why?;It's friendly;It's mysterious;So useful yet fun;It hisses and slithers
+5;What is your favorite body of water?;Ocean;River;Lake;Bathtub
+6;Why?;It's so vast;So fun - you can play in it;It's warm and inviting;I hate bodies of water!
+7;You find yourself in a room with no windows and no doors, bathed in soft white light, floating several feet off the ground. How do you feel?;Scared;Serene;Happy;Nervous

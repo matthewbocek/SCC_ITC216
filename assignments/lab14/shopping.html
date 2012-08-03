@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript" src="hint.js"></script>
+		
+		<script type="text/javascript">
+			$(function()//this crazy function syntax only applies to the open page function.
+			{
+				$("#product").keyup(getSuggestion);//keyup means as you lift your finger off the key
+			});
+			
+			function getSuggestion()
+			{
+				var product = $("#product").val();
+				$("#suggestion").load("includes/get_suggestion.php",{product:product});
+			}
+			
+			$(function()//function to call the show detail function
+			{
+				$("#submit").keyup(showDetail);//on click "show details", call the showDetail function
+			});
+			
+			function showDetail()
+			{
+				var product = $("#product").val();
+				$("#suggestion").load("includes/display_suggestion.php",{product:product});
+			}
+			
+		</script>
+
+	</head>
+	<h3>What product would you like?</h3>
+	<body>
+		<form>
+			<input type="text" name="product" id="product" />
+		</form>
+		<h4>Suggestion:</h4><div id="suggestion"></div>
+		<div id="error"></div>
+		<form action="product_details.php" method="get">
+			<input type="submit" name="submit" value="show details" />
+		</form>
+
+	</body>
+</html>

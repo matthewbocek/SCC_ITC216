@@ -1,0 +1,82 @@
+<?php
+/*
+ * ITC216, Tanya Sweeney, Lab 10, submitted July 28, 2011
+ * ads.php
+ * A page that displays a different advertisement each
+ * time the site is visited, based on cookie data.
+ */
+
+ include ("ads_helper.php");
+ 
+ $visits = 1;
+  
+ $visits += $_COOKIE["visits"] % 5;//the mod division causes # of visits to
+ //keep starting over after 5 so you can loop through just 5 pictures over
+ //and over.
+
+ setcookie("visits", $visits, time() + 60*60*24*30);
+ 
+ echo getAdInfo($visits);
+
+?>
+
+#####################################################################
+<?php
+/*
+ * ITC216, Tanya Sweeney, Lab 10, submitted 7/28/2011
+ * ads_helper.php
+ * holds functions associated with lab 10, ads.php
+ */
+ 
+ define ("FILE_NAME", "content.txt");//we will extract data from a file called "content.txt"
+ 
+/*
+ * This function will gather info for display in our advertisement.
+ */
+
+function getAdInfo($i)
+{
+	if(!file_exists(FILE_NAME)) echo "FILE IS MISSING. FIX IT!!!";
+	
+	$file = fopen(FILE_NAME, "r");//open the file in read mode.
+		
+	while (!feof($file))//loop through this loop until the end of the file
+	{
+		$adCopy = fgets($file);//our ad copy will come from the contents of the file
+		
+		if($adCopy == "") continue;//our function will keep going if it encounters a blank line in the file
+		
+		$arrayFromFile = explode(";", $adCopy);//semicolon delimited file data will be exploded into an array
+		$index = trim($arrayFromFile[0]);
+		$title = trim($arrayFromFile[1]);
+		$description = trim($arrayFromFile[2]);
+		$price = trim($arrayFromFile[3]);
+		$image = trim($arrayFromFile[4]);
+		
+		//echo "|$index| to |$i| and |$title| plus |$description| plus |$price| plus |$image|<br />";//great testing tool
+		
+		if($index == $i)//enter this loop only when $i from ou ads.php page equals $index
+		{
+			fclose($file);//close the file
+			
+			//return "|$index| to |$i| and |$title| plus |$description| plus |$price| plus |$image|";//testing tool
+			
+			//this multi-line return statement returns the entire ad copy, already formatted in html tags, so it can
+			//be echoed as-is on the ads.php page. Makes the ads.php page deceptively, almost ridiculously simple.
+			//Took me hours to figure out this was how I wanted to do it tho.
+			return "<h1>$title</h1>
+			<p>Description: $description</p>
+			<p>Price: $price</p>
+			<img src='images/$image' />";
+		}
+	}
+}
+?>
+
+#####################################################################
+
+1;Porche Bike;A bike with a brand name!;$10,000;bike.jpg
+2;Pretty Shoes;Come to our shoe store;$54.45;shoes.jpg
+3;Delicious Pie;How can you resist this?;$17.99;pie.jpg
+4;Latte;You live in Seattle! You love latte!;$4.45;coffee.jpg
+5;Umbrella;It's sunny under here even when the weather is bad!;$49.95;umbrella.jpg

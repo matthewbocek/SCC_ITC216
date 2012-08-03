@@ -1,0 +1,267 @@
+<?php
+
+	/*
+	 * ITC216, Tanya Sweeney
+	 * Lab 13 - shopping_list.php (landing/main page)
+	 * Submitted 8/18/2011
+	 */ 
+
+	include("includes/product.php");
+	session_start();
+	include("includes/function.php");
+	
+	echo "<h1>Shopping List</h1>";
+
+	$shoppingList = getShoppingList();
+		
+	foreach($shoppingList as $item)
+	{
+		$shoppingList->title;
+		$shoppingList->description;
+		$shoppingList->price;
+		$shoppingList->src;
+	}
+	
+	for($i=0; $i<sizeof($shoppingList); $i++)
+	{
+		echo "<img src='images/" . $shoppingList[$i]->src . "' />";
+		echo "<h3><a href='$i.php'>" . $shoppingList[$i]->title . "</a></h3><br />";
+	}
+
+?>
+
+###############################################
+
+<?php
+
+	/*
+	 * Lab 13 - function.php
+	 */
+
+define ("ITEM_LIST","includes/items.txt");
+define("SHOPPING_ITEMS","shopping_items");
+
+function getShoppingList()
+{
+	if(!file_exists(ITEM_LIST)) return "No File. Fix it pronto.";
+	$file = fopen(ITEM_LIST, "r");
+	$items = array();
+	while(!feof($file))
+	{
+		$fileLine = fgets($file);
+		$lineArray = explode (";", $fileLine);
+		$product = new Product($lineArray[0], $lineArray[1], $lineArray[2], $lineArray[3], $lineArray[4]);
+		array_push($items, $product);
+	}
+	return $items;
+}
+
+?>
+
+###############################################
+
+<?php
+
+	/*
+	 * ITC216, Tanya Sweeney
+	 * Lab 13 - product.php - the product class
+	 * Submitted 8/18/2011
+	 */ 
+
+class Product
+{
+	public $title;			
+	public $description;
+	public $price;
+	public $src;
+	
+	public function __construct($title, $description, $price, $src)
+	{
+		$this->title = $title;
+		$this->description = $description;
+		$this->price = $price;
+		$this->src = $src;
+	}
+	
+	public function getTitle()
+	{
+		return $this->title;
+	}
+	
+	public function getDescription()
+	{
+		return $this->description;
+	}
+	
+	public function getPrice()
+	{
+		return $this->price;
+	}
+	
+	public function getSrc()
+	{
+		return $this->src;
+	}
+}//end class Product
+
+?>
+
+###############################################
+
+<?php
+
+	/*
+	 * ITC216, Tanya Sweeney
+	 * Lab 13 - 0.php - "Porche Bike" page
+	 * Submitted 8/18/2011
+	 */ 
+
+	include("includes/product.php");
+	session_start();
+	include("includes/function.php");
+	
+
+	$shoppingList = getShoppingList();
+		
+	foreach($shoppingList as $item)
+	{
+		$shoppingList->title;
+		$shoppingList->description;
+		$shoppingList->price;
+		$shoppingList->src;
+	}
+	
+		echo "<h3>" . $shoppingList[0]->title . "</h3><br />";
+		echo "Description: " . $shoppingList[0]->description . "<br />";
+		echo "Price: $" . $shoppingList[0]->price . "<br />";
+		echo "<img src='images/" . $shoppingList[0]->src . "' />";
+
+?>
+
+###############################################
+
+<?php
+
+	/*
+	 * ITC216, Tanya Sweeney
+	 * Lab 13 - 1.php - "Pretty Shoes" page
+	 * Submitted 8/18/2011
+	 */ 
+
+	include("includes/product.php");
+	session_start();
+	include("includes/function.php");
+	
+
+	$shoppingList = getShoppingList();
+		
+	foreach($shoppingList as $item)
+	{
+		$shoppingList->title;
+		$shoppingList->description;
+		$shoppingList->price;
+		$shoppingList->src;
+	}
+	
+		echo "<h3>" . $shoppingList[1]->title . "</h3><br />";
+		echo "Description: " . $shoppingList[1]->description . "<br />";
+		echo "Price: $" . $shoppingList[1]->price . "<br />";
+		echo "<img src='images/" . $shoppingList[1]->src . "' />";
+
+?>
+
+###############################################
+
+<?php
+
+	/*
+	 * ITC216, Tanya Sweeney
+	 * Lab 13 - 1.php - "Pie Fest!" page
+	 * Submitted 8/18/2011
+	 */ 
+
+	include("includes/product.php");
+	session_start();
+	include("includes/function.php");
+	
+
+	$shoppingList = getShoppingList();
+		
+	foreach($shoppingList as $item)
+	{
+		$shoppingList->title;
+		$shoppingList->description;
+		$shoppingList->price;
+		$shoppingList->src;
+	}
+	
+		echo "<h3>" . $shoppingList[2]->title . "</h3><br />";
+		echo "Description: " . $shoppingList[2]->description . "<br />";
+		echo "Price: $" . $shoppingList[2]->price . "<br />";
+		echo "<img src='images/" . $shoppingList[2]->src . "' />";
+
+?>
+
+###############################################
+
+<?php
+
+	/*
+	 * ITC216, Tanya Sweeney
+	 * Lab 13 - 1.php - "Umbrella" page
+	 * Submitted 8/18/2011
+	 */ 
+
+	include("includes/product.php");
+	session_start();
+	include("includes/function.php");
+	
+
+	$shoppingList = getShoppingList();
+		
+	foreach($shoppingList as $item)
+	{
+		$shoppingList->title;
+		$shoppingList->description;
+		$shoppingList->price;
+		$shoppingList->src;
+	}
+	
+		echo "<h3>" . $shoppingList[3]->title . "</h3><br />";
+		echo "Description: " . $shoppingList[3]->description . "<br />";
+		echo "Price: $" . $shoppingList[3]->price . "<br />";
+		echo "<img src='images/" . $shoppingList[3]->src . "' />";
+
+?>
+
+###############################################
+
+<?php
+
+	/*
+	 * ITC216, Tanya Sweeney
+	 * Lab 13 - 1.php - "Coffee" page
+	 * Submitted 8/18/2011
+	 */ 
+
+	include("includes/product.php");
+	session_start();
+	include("includes/function.php");
+	
+
+	$shoppingList = getShoppingList();
+		
+	foreach($shoppingList as $item)
+	{
+		$shoppingList->title;
+		$shoppingList->description;
+		$shoppingList->price;
+		$shoppingList->src;
+	}
+	
+		echo "<h3>" . $shoppingList[4]->title . "</h3><br />";
+		echo "Description: " . $shoppingList[4]->description . "<br />";
+		echo "Price: $" . $shoppingList[4]->price . "<br />";
+		echo "<img src='images/" . $shoppingList[4]->src . "' />";
+
+?>

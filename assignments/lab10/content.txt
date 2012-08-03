@@ -1,0 +1,5 @@
+1;Porche Bike;A bike with a brand name!;$10,000;bike.jpg
+2;Pretty Shoes;Come to our shoe store;$54.45;shoes.jpg
+3;Delicious Pie;How can you resist this?;$17.99;pie.jpg
+4;Latte;You live in Seattle! You love latte!;$4.45;coffee.jpg
+5;Umbrella;It's sunny under here even when the weather is bad!;$49.95;umbrella.jpg
