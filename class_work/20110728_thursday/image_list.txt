@@ -1,0 +1,5 @@
+bike.jpg
+coffee.jpg
+pie.jpg
+shoes.jpg
+umbrella.jpg

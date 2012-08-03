@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript">
+			$(function()//our page load function. we will generate a message when the user enters a number.
+			{
+				$("#user_number").keyup(getMessage);
+			});
+			
+			function getMessage()
+			{
+				//get text out of the text box that invoked this function and show it in a popup dialog box.
+				var userText = $(this).val();
+				$("#target").load("poster.php", {data:userText});
+			}
+		</script>
+	</head>
+	<body>
+		Enter a Number: 
+		<input type="text" id="user_number" />
+		<div id="target"></div>
+	</body>
+</html>

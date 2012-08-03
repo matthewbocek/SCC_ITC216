@@ -1,0 +1,12 @@
+Harry Potter;J.K.Rawling;17.99
+The Prophet;Kahlil Gibran;14.99
+Moby Dick;Herman Melville;.99
+Everybody Poops;Kieth Sebastian;4.29
+The Joy of Cooking;Irma S. Rombauer;24.99
+The Long Walk;Slavomir Rawicz;14.99
+New Book;Somebody;15
+Dune;Frank Herbert;7.99
+The Faery Queen;Edmund Spencer;14.95
+Where the Wild Things Are;Maurice Sendack;14.99
+Where the Wild Things Are;Maurice Sendack;14.99
+Where the Wild Things Are;Maurice Sendack;14.99

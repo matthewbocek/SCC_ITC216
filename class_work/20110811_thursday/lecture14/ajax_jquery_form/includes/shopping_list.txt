@@ -1,0 +1,9 @@
+Cool Class;Red;M
+Cool Shirt!;Red;M
+Cool Shirt!;Red;M
+So Fun!;Red;M
+Flirt More.;Red;M
+Tanya;Red;M 
+Did it work?;Red;Mfun;Red;M 
+more fun;Red;M 
+testing;Red;M 

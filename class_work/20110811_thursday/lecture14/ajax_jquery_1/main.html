@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript">
+			//jquery page load function
+			//once all html is loaded, we can call this function.
+			$(function()
+			{
+				$("#show_message").click(getMessage);//pound sign means access an id
+			});
+			
+			function getMessage()
+			{
+				//alert("hi!   :oD");
+				//line below loads the message fromt the file into the target div (below)
+				$("#target").load("message.txt");
+			}
+		</script>
+	</head>
+	<body>
+		<input id='show_message' type="button" value="show message from server"  />
+		<div id="target"></div>
+	</body>
+</html>
